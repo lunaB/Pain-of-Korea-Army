@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pain of Korea Army</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <nav class="navbar is-transparent">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://bulma.io">
+        <h2 style="font-size: 24px; padding: 0px 5px; font-weight: bold;">Pain of Korea Army</h2>
+      </a>
+      <div class="navbar-burger" data-target="navbarExampleTransparentExample">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/">
+          Home
+        </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Related Organizations
+          </a>
+          <div class="navbar-dropdown is-boxed">
+            <a class="navbar-item" href="https://www.mnd.go.kr/mbshome/mbs/mnd/index.jsp">
+              국방부
+            </a>
+            <a class="navbar-item" href="https://www.mma.go.kr/index.do">
+              병무청
+            </a>
+            <a class="navbar-item" href="https://kostat.go.kr/portal/korea/index.action">
+              통계청
+            </a>
+            <hr class="navbar-divider">
+            <a class="navbar-item" href="https://github.com/lunaB/Pain-of-Korea-Army">
+              Github
+            </a>
+          </div>
+        </div>
+      </div>
+  
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="field is-grouped">
+            <p class="control">
+              <a class="button" href="https://github.com/lunaB/Pain-of-Korea-Army">
+                <span>Repo</span>
+              </a>
+            </p>
+            <p class="control">
+              <a class="button is-primary" href="https://luna-b.tistory.com/">
+                <span>Blog</span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero is-medium is-success">
+    <div class="hero-body">
+      <p class="title">
+        군대, 더 좋아질 순 없을까?
+      </p>
+      <p class="subtitle">
+        군인은 국가와 국민을 지키기 위해서 싸우는 사람들입니다. <br>
+        그러면 잘 싸울 수 있도록 더 관심있게 바라봐야하지 않을까요?
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <!--0열-->
+    <div class="columns">
+      <div class="column">
+        <div class="card">
+          <div class="card-content">
+            <div class="content">
+              <p class="subtitle">군 급식 단가</p>
+              <p class="is-size-7">
+                2021년 장병 급식 단가와 초등학교, 중학교, 고등학교, 특수학교, 교도소를 비교한 자료이다. (한끼 기준)<br>
+                <b>* 교도소 급식비는 자료 부족으로 2019년 통계자료를 사용함.</b> (교도소 식비는 매년 2010년부터 2019년까지 꾸준히 연 100원 이상씩 오르는중)
+              </p>
+              <div class="columns">
+                <div class="column is-two-fifths">
+                  <canvas id="A1" style="width:100%; height: 20vh;"></canvas>
+                </div>
+                <div class="column">
+                  <p class="is-size-7">
+                    <b>군부대 급식 단가가 2,930원으로 가장 낮았다.</b><br>
+                    <br>
+                    이렇게 나오는 급식도 부족하거나, 잘 배분되지 않거나, 부실한 구성으로 많은 제보가 이어지고 있다. <br>
+                    또한 <b>물이 없어서 우물에서 물을 길어다 먹는 부대</b>도 있으며, <b>밥에 깍두기만 줘서 부실급식으로 제보된 부대</b>도 있다. <br>
+                    <br>
+                    나라를 지키기위해 강제 징용당한 20살 넘은 다큰 사람들인데, 좋은 재료로 배부르게 먹을 수 있게 되면 좋겠다.
+                  </p>
+                </div>
+              </div>
+              <p class="is-size-7 has-text-right mt-3">
+                2021 국방부, 서울시 통계자료, 2020 교정통계연보 법무부 (2019 교도소 자료)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--1열-->
+    <div class="columns">
+      <div class="column">
+        <div class="card">
+          <div class="card-content">
+            <div class="content">
+              <p class="subtitle">국방부, 국방통계연보 성범죄 집계</p>
+              <p class="is-size-7">
+                <b>군 내부 성범죄 집계 자료와 국방통계연보 성범죄 집계</b> 자료이다.<br>
+                양쪽의 성범죄 보고 집계를 보면 국방부에서 성범죄에 대하여 군 스스로 전혀 진단 하지 않았슴을 알 수 있다.<br>
+                <br>
+                당시 군 내부에서 적발한 성범죄 통계를 보면, 언론에 알려진 자료만 봐도 군의 성범죄 은폐와 자정능력을 의심할 수 밖에 없다.
+              </p>
+              <canvas id="B1" style="width:100%; height: 20vh;"></canvas>
+              <p class="is-size-7 has-text-right mt-3">
+                정부부처 통계 (여성가족부, 국방부), 국방통계연보 통계 (국방통계연보)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <div class="card-content">
+            <div class="content">
+              <p class="subtitle">군 임금</p>
+              <p class="is-size-7">
+                <b>대한민국 군인들의 월급은 비정상적으로 낮다.</b>
+                군 월급 계속하여 개선이 되고 있지만, 2021년 여전히 최저임금의 절반도 되지 않는다. <br>
+                또한 군월급은 군대에서 제공하지 않거나 부실하게 제공하는 먹거리, 시설, 용품들을 보충하기위해, 위하여 병사들이 PX에서 개인의 돈을 사용함으로, 군 임금이 다시 반납되는 셈이다.
+                <table class="table is-narrow is-hoverable">
+                  <thead>
+                    <tr>
+                      <th>연도</th>
+                      <th>이병</th>
+                      <th>병장</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>2013</th>
+                      <td>97,800</td>
+                      <td>129,600</td>
+                    </tr>
+                    <tr>
+                      <th>2017</th>
+                      <td>168,000</td>
+                      <td>216,000</td>
+                    </tr>
+                    <tr>
+                      <th>2018</th>
+                      <td>306,100</td>
+                      <td>405,700</td>
+                    </tr>
+                    <tr>
+                      <th>2019</th>
+                      <td>306,100</td>
+                      <td>405,700</td>
+                    </tr>
+                    <tr>
+                      <th>2020</th>
+                      <td>408,100</td>
+                      <td>540,900</td>
+                    </tr>
+                    <tr class="is-selected">
+                      <th>2021</th>
+                      <td>459,100</td>
+                      <td>608,500</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--2열-->
+    <div class="columns">
+      <div class="column">
+        <div class="card">
+          <div class="card-content">
+            <div class="content">
+              <p class="subtitle">군 사망 사고</p>
+              <p class="is-size-7">
+                매년 많은 사망자들이 나오고 있다. 아래는 군 사망사고의 통계이다. <u>개인 질병, 민간인에 의한 피살, 의로운 죽음, 전사자는</u> <b>포함하지 않는다.</b> 
+              </p>
+              <p class="is-size-7">
+                <b>안전사고 : 고의성없는 사고로 인한 사망</b> (ex: 총기, 수류탄 불량으로 인한 사망)<br>
+                <b>군기사고 : 고의 또는 과실로 인한 사망</b> (ex: 자살, 폭행으로 인한 사망)
+              </p>
+              <canvas id="C1" style="width:100%; height: 20vh;"></canvas>
+              <p class="is-size-7 has-text-right mt-3">
+                2021 국방부 통계자료
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <div class="card-content">
+            <div class="content">
+              <p class="subtitle">군 사망 원인</p>
+              <p class="is-size-7">
+                군 사망 원인은 2011년 부터 현재까지 자살이 제일 높다.
+              </p>
+              <p class="is-size-7">
+                2020년은 <b>사망원인 76%가 자살</b>이였으며, <b>42명이 자살</b>한것으로 국방부에서 보고했다. <br>
+                이는 2011년 97명 자살에서 줄어든 수치이다.
+              </p>
+              <canvas id="C2" style="width:100%; height: 20vh;"></canvas>
+              <p class="is-size-7 has-text-right mt-3">
+                2021 국방부 통계자료
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <div class="card-content">
+            <div class="content">
+              <p class="subtitle">군 외래, 입원 환자</p>
+              <p class="is-size-7">
+                외래 환자와 입원 환자의 비율이다.
+              </p>
+              <p class="is-size-7">
+                <b>외래환자는 140만명 정도</b>로 유지되는 반면 <b>2020년 입원환자 수는 23,914명으로 급격하게 감소</b>함을 볼 수 있다. <br>
+                2020년 휴대폰 지급으로인한 부대내 부조리가 줄어든것을 이유로 분석했다.
+              </p>
+              <canvas id="C3" style="width:100%; height: 20vh;"></canvas>
+              <p class="is-size-7 has-text-right mt-3">
+                2021 국방부 통계자료
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="level">
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading">방문</p>
+        <p class="title">15</p>
+      </div>
+    </div>
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading">누적 제보</p>
+        <p class="title">12</p>
+      </div>
+    </div>
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading">구독</p>
+        <p class="title">6</p>
+      </div>
+    </div>
+    <div class="level-item has-text-centered">
+      <div>
+        <p class="heading">좋아요</p>
+        <p class="title">44</p>
+      </div>
+    </div>
+  </nav>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Pain-of-Korea-Army</strong> by LunaB. 
+        The source code is licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>
+      </p>
+    </div>
+  </footer>
+  <script>
+    // A1
+    var labels = ['군부대', '초등학교', '중학교', '고등학교', '특수학교', '교도소'];
+    var data = {
+      labels: labels,
+      datasets: [
+        {
+          label: '2021년 급식 단가',
+          data: [2930, 3768, 5688, 5865, 5472, 4616],
+          borderColor: '#000',
+          backgroundColor: ['#ffa600', '#003f5c', '#003f5c', '#003f5c', '#003f5c', '#ff7c43'],
+        }
+      ]
+    };
+    var config = {
+      type: 'bar',
+      data: data,
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+          },
+          title: {
+            display: true,
+            text: '2021년 군 급식단가 비교'
+          }
+        },
+      },
+    };
+    var ctx = document.getElementById('A1');
+    var myChart = new Chart(ctx, config);
+  </script>
+  <script>
+    // B1
+    var labels = [2016, 2017, 2018, 2019];
+    var data = {
+      labels: labels,
+      datasets: [
+        {
+          label: '정부부처 집계',
+          data: [0, 0, 1, 182],
+          borderColor: '#000',
+          backgroundColor: '#003f5c',
+        },
+        {
+          label: '국방통계연보 집계',
+          data: [238, 456, 652, 785],
+          borderColor: '#000',
+          backgroundColor: '#ffa600'
+        },
+      ]
+    };
+    var config = {
+      type: 'bar',
+      data: data,
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+          },
+          title: {
+            display: true,
+            text: '군 내부 성범죄 추이'
+          }
+        },
+      },
+    };
+    var ctx = document.getElementById('B1');
+    var myChart = new Chart(ctx, config);
+  </script>
+  <script>
+    // C1
+    var labels = [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020];
+    var data = {
+      labels: labels,
+      datasets: [
+        {
+          label: '군기 사고',
+          data: [101, 73, 80, 76, 65, 57, 52, 60, 63, 44],
+          borderColor: '#000',
+          backgroundColor: '#003f5c',
+        },
+        {
+          label: '안전 사고',
+          data: [42, 38, 37, 25, 28, 24, 23, 26, 23, 11],
+          borderColor: '#000',
+          backgroundColor: '#ffa600'
+        },
+      ]
+    };
+    var config = {
+      type: 'bar',
+      data: data,
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+          },
+          title: {
+            display: true,
+            text: '군인 사망자 수'
+          }
+        },
+        scales: {
+          x: {
+            stacked: true,
+          },
+          y: {
+            stacked: true
+          }
+        }
+      },
+    };
+    var ctx = document.getElementById('C1');
+    var myChart = new Chart(ctx, config);
+  </script>
+  <script>
+    // C2
+    var labels = ['차량', '익사', '추락', '자살', '안전', '군기'];
+    var data = {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Data',
+          data: [1, 5, 2, 42, 3, 2],
+          backgroundColor: ['#003f5c', '#58508d', '#bc5090', '#ffa600', '#ff6361', '#ff6361'],
+        },
+      ]
+    };
+    var config = {
+      type: 'pie',
+      data: data,
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'top',
+          },
+          title: {
+            display: true,
+            text: '2020 군인 사망 원인'
+          },
+        },
+      },
+    };
+    var ctx = document.getElementById('C2');
+    var myChart = new Chart(ctx, config);
+  </script>
+  <script>
+    // C3
+    var labels = ['2015', '2016', '2017', '2018', '2019', '2020'];
+    var data = {
+      labels: labels,
+      datasets: [
+        {
+          type: 'line',
+          label: '입원환자수',
+          data: [44412, 43851, 41022, 36280, 35942, 23914],
+          backgroundColor: '#ff6361',
+          borderColor: '#ff7c43aa',
+          yAxisID: 'y1',
+        },
+        {
+          type: 'bar',
+          label: '외래환자수',
+          data: [1415672, 1479093, 1565184, 1494051, 1527104, 1357129],
+          backgroundColor: '#a05195',
+          yAxisID: 'y2',
+        },
+      ]
+    };
+    var config = {
+      type: 'line',
+      data: data,
+      options: {
+        responsive: true,
+        
+        plugins: {
+          legend: {
+            position: 'top',
+          },
+          title: {
+            display: true,
+            text: '2020 군인 사망 원인'
+          },
+        },
+        stacked: false,
+        scales: {
+          y1: {
+            type: 'linear',
+            display: true,
+            position: 'left',
+          },
+          y2: {
+            type: 'linear',
+            display: true,
+            position: 'right',
+
+            // grid line settings
+            grid: {
+              drawOnChartArea: false, // only want the grid lines for one axis to show up
+            },
+          },
+        }
+      },
+    };
+    var ctx = document.getElementById('C3');
+    var myChart = new Chart(ctx, config);
+  </script>
+
+  <script>
+    
+  </script>
+</body>
+</html>
